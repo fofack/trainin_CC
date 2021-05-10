@@ -28,7 +28,7 @@
                 <td>{{ $livre->category_id }}</td>
                 <td>
                     <a class="btn btn-primary" href="{{url('update-livre/'.$livre->id)}}">Update</a>
-                    <a class="btn btn-secondary" href="{{url('details/'.$livre->id)}}">Details</a>
+                    <a class="btn btn-secondary" href="{{url('details-livre/'.$livre->id)}}">Details</a>
                     <a class="btn btn-danger" href="{{url('delete-livre/'.$livre->id)}}">delete</a>
                 </td>
             </tr>

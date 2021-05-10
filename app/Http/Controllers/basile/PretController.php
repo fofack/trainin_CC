@@ -41,7 +41,7 @@ class PretController extends Controller
 
     public function show($id)
     {
-        $prets = Pret::select('prets.date_pret','prets.date_restitue','clients.nom as client','livres.nom as livre')
+        $prets = Pret::select('prets.date_pret','prets.date_restitue','prets.nbre_exple','clients.nom as client','livres.nom as livre')
         ->join('clients','prets.client_id','=','clients.id')
         ->join('livres','prets.livre_id','=','livres.id')
         ->where('prets.id','=', $id)
@@ -52,7 +52,9 @@ class PretController extends Controller
     public function edit($id)
     {
         $prets = Pret::FindOrFail($id);
-        return view('pret.ajout_pret', compact('prets'));
+        $clients = Client::all();
+        $livres = Livre::all();
+        return view('pret.ajout_pret', compact('prets','clients','livres'));
     }
 
     public function update(Request $request, $id)

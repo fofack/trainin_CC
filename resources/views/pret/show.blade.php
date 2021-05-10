@@ -24,9 +24,9 @@
             </tr>
             <tr>
                 <th>Date restitution</th>
-                <td>{{$prets->date_restitution}}</td>
+                <td>{{$prets->date_restitue}}</td>
             </tr>
-                <th>Nombre exemplaire(s):</th>
+                <th>Nombre exemplaire(s)</th>
                 <td>{{$prets->nbre_exple}}</td>
             </tr>
         </table>

@@ -6,27 +6,27 @@
 
         <div class="form-group">
             <label class="label-control" for="nom">Nom du livre</label>
-            <input type="text" value="{{$livres->nom}}" class="form-control" name="nom" id="nom" />
+            <input type="text" value="{{isset($livres->nom) ? $livres->nom : ''}}" class="form-control" name="nom" id="nom" />
         </div>
         <div class="form-group">
             <label class="label-control" for="nom_auteur">Nom de l'auteur</label>
-            <input type="text" value="{{$livres->nom_auteur}}" class="form-control" name="nom_auteur" id="nom_auteur" />
+            <input type="text" value="{{isset($livres->nom_auteur) ? $livres->nom_auteur :''}}" class="form-control" name="nom_auteur" id="nom_auteur" />
         </div>
         <div class="form-group">
             <label class="label-control" for="numero_isbn">Numero d'ISBN du livre</label>
-            <input type="text" value="{{$livres->numero_isbn}}" class="form-control" name="numero_isbn" id="numero_isbn" />
+            <input type="text" value="{{isset($livres->numero_isbn) ? $livres->numero_isbn :''}}" class="form-control" name="numero_isbn" id="numero_isbn" />
         </div>
         <div class="form-group">
             <label class="label-control" for="date_edition">Date d'edition</label>
-            <input type="date" value="{{$livres->date_edition}}" class="form-control" name="date_edition" id="date_edition" />
+            <input type="date" value="{{isset($livres->date_edition) ? $livres->date_edition : ''}}" class="form-control" name="date_edition" id="date_edition" />
         </div>
         <div class="form-group">
             <label class="label-control" for="description">Description du livre</label>
-            <textarea type="textarea" valuetext="{{$livres->description}}" class="form-control" name="description" id="description"></textarea>
+            <input type="textarea" value="{{isset($livres->description) ? $livres->description : ''}}" class="form-control" name="description" id="description"/>
         </div>
         <div class="form-group">
             <label class="label-control" for="nombre_exple">Nombre d'exemplaire</label>
-            <input type="text" value="{{$livres->nombre_exple}}" class="form-control" name="nombre_exple" id="nombre_exple" />
+            <input type="text" value="{{isset($livres->nombre_exple) ? $livres->nombre_exple : ''}}" class="form-control" name="nombre_exple" id="nombre_exple" />
         </div>
         <div class="form-group">
             <label class="label-control" for="etat">Etat du livre</label>
@@ -50,7 +50,7 @@
         <div class="form-group">
             <label for="image" class="label-control">Image du livre
         </div>
-        <input class="form-control" type="file" name="image" id="image">
+        <input class="form-control" type="file" name="image" id="image" value="{{isset($livres->image) ? $livres->image : ''}}">
         </div>
         <div class="form-group col-md-5">
             <button class=" form-control btn btn-success" type="submit">{{isset($livres) ?'Modifier': 'Ajouter'}}</button>

@@ -31,8 +31,8 @@
                 <td>{{$livres->description}}</td>
             </tr>
             <tr>
-                <th>Nombre exemplaire(s):</th>
-                <td>{{$livres->nbre_exple}}</td>
+                <th>Nombre exemplaire(s)</th>
+                <td>{{$livres->nombre_exple}}</td>
             </tr>
             <tr>
                 <th>Categorie:</th>

@@ -53,6 +53,9 @@
                             <a class="nav-link " data-value="team" href="{{ url('ajout_client') }}">Ajout client</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link " data-value="team" href="{{ url('ajout_client') }}">Admin</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link " data-value="contact" href="#">Contact</a>
                         </li>
                     </ul>

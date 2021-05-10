@@ -16,7 +16,7 @@
                     <td>{{ $client->email }}</td>
                     <td>
                         <a class="btn btn-primary" href="{{ url('update-client/' . $client->id) }}">Edit</a>
-                        <a class="btn btn-secondary" href="{{ url('details/' . $client->id) }}">Details</a>
+                        <a class="btn btn-secondary" href="{{ url('details-client/' . $client->id) }}">Details</a>
                         <a class="btn btn-danger" href="{{ url('delete-client/' . $client->id) }}">Delete</a>
                     </td>
                 </tr>

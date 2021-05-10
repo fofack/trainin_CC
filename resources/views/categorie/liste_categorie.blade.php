@@ -16,7 +16,7 @@
                 <td>{{ $categorie->description }}</td>
                 <td>
                     <a href="{{ url('update-categorie/' . $categorie->id) }}" class="btn btn-primary">Update</a>
-                    <a class="btn btn-secondary" href="{{ url('details/' . $categorie->id) }}">Details</a>
+                    <a class="btn btn-secondary" href="{{ url('details-categorie/' . $categorie->id) }}">Details</a>
                     <a class="btn btn-danger" href="{{ url('delete-categorie/' . $categorie->id) }}">delete</a>
                 </td>
             </tr>

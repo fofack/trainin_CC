@@ -17,7 +17,7 @@ class LivreController extends Controller
 
     public function indexLivre()
     {
-        $livres = Livre::all()->last();
+        $livres = Livre::all();
         return view('app', compact('livres'));
     }
 
@@ -28,7 +28,8 @@ class LivreController extends Controller
      */
     public function create()
     {
-        return view('livre.ajout_livre');
+        $categories = Category::all();
+        return view('livre.ajout_livre',compact('categories'));
     }
 
     /**
@@ -58,9 +59,9 @@ class LivreController extends Controller
      * @param  \App\Models\Livre  $livre
      * @return \Illuminate\Http\Response
      */
-    public function show(Livre $livre)
+    public function show($id)
     {
-        $livres = Livre::FindOrFail($livre);
+        $livres = Livre::FindOrFail($id);
         return view('livre.show', compact('livres'));
     }
 

@@ -6,11 +6,11 @@
 
         <div class="form-group">
             <label  class="label-control" for="nom">Nom de la categorie</label>
-            <input class="form-control" type="text" value="{{$ategories->nom}}" name="nom" id="nom">
+            <input class="form-control" type="text" value="{{isset($categories->nom) ? $categories->nom : ''}}" name="nom" id="nom">
         </div>
         <div class="form-group">
             <label  class="label-control" for="description">Nom de la categorie</label>
-            <textarea class="form-control" type="text" value="{{$categories->description}}" name="description" id="description"></textarea>
+            <input class="form-control" type="text" value="{{isset($categories->description) ? $categories->description : ''}}" name="description" id="description"/>
         </div>
         <div class="col-md-5 ">
         <button class="btn btn-success" type="submit">{{isset($categories) ? 'Modifier' :'Ajouter'}}</button>
