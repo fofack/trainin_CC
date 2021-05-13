@@ -14,9 +14,10 @@
             width: 100%;
         }
 
-        section {
-            margin-top: 8%
+        #photo{
+            padding-top: 5%
         }
+
 
         footer {
             margin-top: 5%;
@@ -24,6 +25,41 @@
             color: white;
         }
 
+        .plants .plants-box figure {
+     margin: 0px;
+}
+.plants .plants-box figure img {
+     width: 100%;
+}
+.plants .plants-box h3 {
+     font-size: 30px;
+     line-height: 36px;
+     font-weight: 600;
+     padding: 16px 20px 6px 20px;
+     color: #0d0e0a;
+}
+.plants .plants-box p {
+     font-size: 17px;
+     line-height: 30px;
+     padding: 0px 20px 14px 20px;
+     color: #0d0e0a;
+}
+
+.plants {
+     padding: 90px 0px;
+}
+    div a:hover{
+        cursor: pointer;
+        background-color: violet;
+        border: 1px solid violet;
+        border-radius: 0.5em;
+    }
+    #title-footer{
+        padding-left: 2%
+    }
+    div h3{
+        text-align: center;
+    }
     </style>
 </head>
 
@@ -40,30 +76,7 @@
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav mr-4">
-                        <li class="nav-item">
-                            <a class="nav-link" data-value="about" href="{{ url('liste_livre') }}">Voir livre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " data-value="portfolio" href="{{ url('ajout_livre') }}">Ajout
-                                livre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " data-value="blog" href="{{ url('liste_categorie') }}">Voir
-                                categorie</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " data-value="team" href="{{ url('ajout_categorie') }}">Ajout
-                                categorie</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " data-value="blog" href="{{ url('liste_pret') }}">Voir pret</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " data-value="team" href="{{ url('ajout_pret') }}">Ajout pret</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " data-value="blog" href="{{ url('liste_client') }}">Voir client</a>
+                   
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " data-value="team" href="{{ url('count') }}">Admin</a>
@@ -76,47 +89,50 @@
             </nav>
         </header>
         <section>
-            <div class="row">
-                @foreach ($livres as $livre)
-                    <div class="col-md-3">
-                        <div>
-                            <img src="{{ url('assets/images/' . $livre->image) }}" alt="Rien" />
+            <div class="container">
+                <div class="row">
+                    @foreach ($livres as $livre)
+                   <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 ">
+                        <div class="plants-box border">
+                            <figure><img src="{{ url('/assets/images/livres/'.$livre->image) }}" alt="img"/></figure>
+                            <h3 class="text-success bg-secondary">{{ $livre->nom }}</h3>
+                            <p class="text-black">{{ $livre->description }}</p>
+                            <a class="float-left" id="form" href="{{url('ajout_pret')}}">Preter</a>
+                            <a href="{{url('/details-livre/'.$livre->id)}}" class="float-right">Voir plus</a>
                         </div>
-                        <p>{{ $livre->nom }}</p>
-                        <div>
-                            {{ $livre->description }}
-                        </div>
                     </div>
-                @endforeach
-            </div>
-        </section>
-        <aside>
-            <div class="row">
-                <h1>Commentaires</h1>
-            </div>
-            <div class="row">
-                <form action="">
-                    <div class="form-group">
-                        <label class="label-control" for="nom">Votre nom</label>
-                        <input class="form-control" type="text" name="nom" id="nom">
-                    </div>
-                    <div class="form-group">
-                        <label class="label-control" for="email">Votre emal</label>
-                        <input class="form-control" type="email" name="email" id="email">
-                    </div>
-                    <div class="form-group">
-                        <label class="label-control" for="message">Votre message</label>
-                        <textarea class="form-control" type="textarea" name="message" id="message"></textarea>
-                    </div>
+                   @endforeach
+                </div>
+                <aside >
                     <div class="row">
-                        <div class="col-md-3">
-                            <button class="btn btn-success">Ajouter</button>
+                        <div class="col-md-4">
+                            <h1>Commentaires</h1>
+                        <form action="">
+                            <div class="form-group">
+                                <label class="label-control" for="nom">Votre nom</label>
+                                <input class="form-control" type="text" name="nom" id="nom">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-control" for="email">Votre emal</label>
+                                <input class="form-control" type="email" name="email" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label class="label-control" for="message">Votre message</label>
+                                <textarea class="form-control" type="textarea" name="message" id="message"></textarea>
+                            </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-success">Ajouter</button>
+                                </div>
+                        </form>
+                        </div>
+                        <div class="col-md-8" id="photo">
+                            <img src="{{url('/assets/images/a.jpeg')}}" alt="image">
                         </div>
                     </div>
-                </form>
-            </div>
+                </aside>
 
-        </aside>
+        </section>
+        
         <footer>
             <div class="row">
                 <div class="col-md-5">
@@ -126,11 +142,12 @@
                     <h1>Contact</h1>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="title-footer">
                 <h3>&copy;freelearning 2021</h3>
             </div>
         </footer>
     </div>
+</div>
 </body>
 
 </html>

@@ -45,7 +45,7 @@ class LivreController extends Controller
         if ($request->hasFile('image')) {
             $nom = $request->file('image')->getClientOriginalName();
             $path = 'image_'.date("H-i-s").'_'.$nom;
-            $request->file('image')->move(public_path().'/assets/images', $path);
+            $request->file('image')->move(public_path().'/assets/images/livres', $path);
             $data['image'] = $path;
         }
         Livre::create($data);
